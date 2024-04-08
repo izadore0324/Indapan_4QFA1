@@ -10,17 +10,31 @@
         <fieldset form="input">
         <legend>Sign-Up Sheet </legend>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" onblur="changeCol()"><br><br>
+        <input type="text" id="name" name="name" onblur="changeCol()">
+
+        <label for="uname">Preferred username:</label>
+        <input type="text" id="uname" name="uname" onblur="changeCol3()"><br><br>
+
+        <label for="pword">Password:</label>
+        <input type="password" id="pword" name="pword" onblur="changeCol5()">
+
         <label for="age">Age: </label>
         <input type="number" id="age" name="age" min="1" max="100" onblur="changeCol2()"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" onblur="changeCol4()">
+
         <label for="gender">Select gender: </label>
         <select name="gender" id="gen">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Prefer not to say">Prefer not to say</option>
-        </select>
-        <br>
-        <br>
+        </select><br><br>
+
+        <label for="text">Share your interests here:</label>
+        <input type="text" id="txt" name="text" onblur="changeCol6()">
+        <br><br>
+
         
         <input type="submit" value="Submit">
         <input type="reset" value="Clear" onclick="resetAll()">
@@ -34,7 +48,10 @@
         var a = document.getElementById("name").value;
         var b = document.getElementById("age").value;
         var c = document.getElementById("gen").value;
-        document.getElementById("output").innerHTML = "<br>" + "Name: " + a + "<br>" + "Age: " + b + "<br>" + "Gender: " + c;
+        var d = document.getElementById("uname").value;
+        var e = document.getElementById("email").value;
+        var f = document.getElementById("txt").value;
+        document.getElementById("output").innerHTML = "<br>" + "Name: " + a + "<br>" + "Preferred username: " + d + "<br>" + "Age: " + b + "<br>" +"Email: " + e + "<br>" + "Gender: " + c + "<br>" + "Information: " + "<br>" + f;
         return false;
     }
 
@@ -42,6 +59,10 @@
         document.getElementById("output").innerHTML = "";
         document.getElementById("name").style.borderColor = "";
         document.getElementById("age").style.borderColor = "";
+        document.getElementById("uname").style.borderColor = "";
+        document.getElementById("email").style.borderColor = "";
+        document.getElementById("txt").style.borderColor = "";
+        document.getElementById("pword").style.borderColor = "";
     }
 
     function changeCol() {
@@ -61,6 +82,46 @@
         }
         else {
         document.getElementById("age").style.borderColor = "green";
+        }
+    }
+
+    function changeCol3() {
+        var c = document.getElementById("uname");
+        if (c.value == "") {
+        document.getElementById("uname").style.borderColor = "red";
+        }
+        else {
+        document.getElementById("uname").style.borderColor = "green";
+        }
+    }
+
+    function changeCol4() {
+        var d = document.getElementById("email");
+        if (d.value == "") {
+        document.getElementById("email").style.borderColor = "red";
+        }
+        else {
+        document.getElementById("email").style.borderColor = "green";
+        }
+    }
+
+    function changeCol5() {
+        var e = document.getElementById("pword");
+        if (e.value == "") {
+        document.getElementById("pword").style.borderColor = "red";
+        }
+        else {
+        document.getElementById("pword").style.borderColor = "green";
+        }
+    }
+
+    function changeCol6() {
+        var f = document.getElementById("txt");
+        if (f.value == "") {
+        document.getElementById("txt").style.borderColor = "red";
+        }
+        else {
+        document.getElementById("txt").style.borderColor = "green";
         }
     }
 
