@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="input" onsubmit="return displayText();">
+        <fieldset form="input">
+        <legend>Sign-Up Sheet </legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" onblur="changeCol()"><br><br>
+        <label for="age">Age: </label>
+        <input type="number" id="age" name="age" min="1" max="100" onblur="changeCol2()"><br><br>
+        <label for="gender">Select gender: </label>
+        <select name="gender" id="gen">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+        <br>
+        <br>
+        
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear" onclick="resetAll()">
+        </fieldset>
+    </form>
+
+    <div id="output"></div>
+   
+    <script>
+    function displayText(){
+        var a = document.getElementById("name").value;
+        var b = document.getElementById("age").value;
+        var c = document.getElementById("gen").value;
+        document.getElementById("output").innerHTML = "<br>" + "Name: " + a + "<br>" + "Age: " + b + "<br>" + "Gender: " + c;
+        return false;
+    }
+
+    function resetAll() {
+        document.getElementById("output").innerHTML = "";
+        document.getElementById("name").style.borderColor = "";
+        document.getElementById("age").style.borderColor = "";
+    }
+
+    function changeCol() {
+        var a = document.getElementById("name");
+        if (a.value == "") {
+        document.getElementById("name").style.borderColor = "red";
+        }
+        else {
+        document.getElementById("name").style.borderColor = "green";
+        }
+    }
+
+    function changeCol2() {
+        var b = document.getElementById("age");
+        if (b.value == "") {
+        document.getElementById("age").style.borderColor = "red";
+        }
+        else {
+        document.getElementById("age").style.borderColor = "green";
+        }
+    }
+
+    </script>
+</body>
+</html>
