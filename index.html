@@ -24,6 +24,9 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" onblur="changeCol4()">
 
+        <label for="address">Address:</label>
+        <input type="text" id="add" name="add" onblur="changeCol7()"><br><br>
+
         <label for="gender">Select gender: </label>
         <select name="gender" id="gen">
             <option value="Male">Male</option>
@@ -52,7 +55,8 @@
         var e = document.getElementById("email").value;
         var f = document.getElementById("txt").value;
         var g = document.getElementById("pword").value;
-        document.getElementById("output").innerHTML = "<br>" + "Name: " + a + "<br>" + "Preferred username: " + d + "<br>" + "Password: " + g + "<br>" + "Age: " + b + "<br>" +"Email: " + e + "<br>" + "Gender: " + c + "<br>" + "Information: " + "<br>" + f;
+        var h = document.getElementById("add").value;
+        document.getElementById("output").innerHTML = "<br>" + "Name: " + a + "<br>" + "Preferred username: " + d + "<br>" + "Password: " + g + "<br>" + "Age: " + b + "<br>" +"Email: " + e + "<br>" + "Address: " + h + "<br>" + "Gender: " + c + "<br>" + "Information: " + "<br>" + f;
         return false;
     }
 
@@ -64,6 +68,7 @@
         document.getElementById("email").style.borderColor = "";
         document.getElementById("txt").style.borderColor = "";
         document.getElementById("pword").style.borderColor = "";
+        document.getElementById("add").style.borderColor = "";
     }
 
     function changeCol() {
@@ -123,6 +128,16 @@
         }
         else {
         document.getElementById("txt").style.borderColor = "green";
+        }
+    }
+
+    function changeCol7() {
+        var g = document.getElementById("add");
+        if (g.value == "") {
+        document.getElementById("add").style.borderColor = "red";
+        }
+        else {
+        document.getElementById("add").style.borderColor = "green";
         }
     }
 
