@@ -1,0 +1,49 @@
+fieldset {
+    background-color: rgb(196, 210, 240);
+    border-radius: 6px;
+    border-color: rgb(196, 210, 240);
+    box-shadow: 0px 9px rgb(173, 198, 230);
+}
+
+legend {
+    text-align: center;
+    background-color: rgb(192, 223, 252);
+}
+
+#subtitle{
+    text-align: center;
+}
+
+.n {
+    margin-left: 420px;
+    padding: 3px;
+}
+
+.p {
+    margin-left: 490px;
+    padding: 3px;
+}
+
+.e {
+    margin-left: 450px;
+    padding: 3px;
+}
+
+.g {
+    margin-left: 590px;
+    padding: 3px;
+}
+
+.t {
+    margin-left: 510px;
+    padding: 3px;
+}
+
+.sub {
+    margin-left: 640px;
+    padding: 8px;
+}
+
+.res {
+    padding: 8px;
+}
